@@ -16,5 +16,10 @@ namespace Command.Commands
         {
             stereo.Off();
         }
+
+        public void Undo()
+        {
+            stereo.On();
+        }
     }
 }

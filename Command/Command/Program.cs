@@ -17,10 +17,14 @@ namespace Command
 
             remote.ButtonPressOn(0);
             remote.ButtonPressOn(1);
+            remote.UndoPressed();
             remote.ButtonPressOn(2);
+            remote.UndoPressed();
 
             remote.ButtonPressOff(2);
+            remote.UndoPressed();
             remote.ButtonPressOff(0);
+            remote.UndoPressed();
         }
     }
 }

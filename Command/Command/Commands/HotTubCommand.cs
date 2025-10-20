@@ -21,5 +21,10 @@ namespace Command.Commands
             hotTub.SetTemperature(40);
             hotTub.JetsOn();
         }
+
+        public void Undo()
+        {
+            hotTub.JetsOff();
+        }
     }
 }

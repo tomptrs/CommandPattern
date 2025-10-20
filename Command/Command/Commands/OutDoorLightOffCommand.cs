@@ -19,5 +19,10 @@ namespace Command.Commands
         {
             light.Off();
         }
+
+        public void Undo()
+        {
+           light.On();
+        }
     }
 }

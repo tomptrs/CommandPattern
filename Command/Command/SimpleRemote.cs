@@ -13,6 +13,7 @@ namespace Command
     {
         private ICommand[] slotsOn;
         private ICommand[] slotsOff;
+        private ICommand undo;
         public SimpleRemote()
         {
             slotsOn = new ICommand[3];
@@ -26,10 +27,18 @@ namespace Command
 
         public void ButtonPressOn(int nr) {
             slotsOn[nr].Execute();
+            undo = slotsOn[nr];
         }
         public void ButtonPressOff(int nr)
         {
             slotsOff[nr].Execute();
+            undo = slotsOff[nr];
+        }
+
+        public void UndoPressed()
+        {
+            Console.WriteLine("Undo:");
+            undo.Undo();
         }
     }
 }

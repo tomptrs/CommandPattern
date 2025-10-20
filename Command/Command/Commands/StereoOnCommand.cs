@@ -21,5 +21,10 @@ namespace Command.Commands
             stereo.SetVolume(17);
             stereo.On();
         }
+
+        public void Undo()
+        {
+            stereo.Off();
+        }
     }
 }

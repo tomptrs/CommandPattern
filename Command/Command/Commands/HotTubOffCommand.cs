@@ -19,5 +19,10 @@ namespace Command.Commands
         {
             hotTub.JetsOff();
         }
+
+        public void Undo()
+        {
+           hotTub.JetsOn();
+        }
     }
 }
