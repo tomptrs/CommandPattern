@@ -8,11 +8,19 @@ namespace Command
         static void Main(string[] args)
         {
             HotTub hotTub = new HotTub();
+            Stereo stereo = new Stereo();
+            OutDoorLight light = new OutDoorLight();
             SimpleRemote remote = new SimpleRemote();
-            remote.slot = new HotTubCommand(hotTub);
+            remote.AddSlot(0, new HotTubCommand(hotTub), new HotTubOffCommand(hotTub));
+            remote.AddSlot(1,new StereoOnCommand(stereo),new StereoOffCommand(stereo));
+            remote.AddSlot(2, new OutDoorLightCommand(light), new OutDoorLightOffCommand(light));
 
+            remote.ButtonPressOn(0);
+            remote.ButtonPressOn(1);
+            remote.ButtonPressOn(2);
 
-            remote.ButtonPress1();
+            remote.ButtonPressOff(2);
+            remote.ButtonPressOff(0);
         }
     }
 }
